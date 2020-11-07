@@ -36,7 +36,7 @@ public class Page2 extends HttpServlet {
 		PrintWriter pw = response.getWriter();
 		// get cookie list
 		Cookie[] arrCk = request.getCookies();
-		pw.write("<h2> Danh Sach Cookie </h2>");
+		pw.write("<h2> Cookie List </h2>");
 		
 		// print tat ca cookie co trong ds
 		if (arrCk != null) {
@@ -54,7 +54,7 @@ public class Page2 extends HttpServlet {
 		String pass = ss.getAttribute("password") + "";
 		
 		//print value of session
-		pw.write("<hr><h2> Danh Sach Session </h2>");
+		pw.write("<hr><h2> Session List:  </h2>");
 		pw.write("<p>" + email + "</p>");
 		pw.write("<p>" + username + "</p>");
 		pw.write("<p>" + pass + "</p>");
