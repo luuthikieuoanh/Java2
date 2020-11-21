@@ -2,10 +2,10 @@
 -- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1:3306
--- Thời gian đã tạo: Th10 14, 2020 lúc 07:32 PM
--- Phiên bản máy phục vụ: 8.0.18
--- Phiên bản PHP: 7.3.12
+-- Host: 127.0.0.1:3306
+-- Generation Time: Nov 21, 2020 at 12:37 PM
+-- Server version: 8.0.18
+-- PHP Version: 7.3.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `newsdata`
+-- Database: `newsdata`
 --
 CREATE DATABASE IF NOT EXISTS `newsdata` DEFAULT CHARACTER SET utf8 COLLATE utf8_vietnamese_ci;
 USE `newsdata`;
@@ -27,23 +27,47 @@ USE `newsdata`;
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `user`
+-- Table structure for table `category`
+--
+
+DROP TABLE IF EXISTS `category`;
+CREATE TABLE IF NOT EXISTS `category` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(20) CHARACTER SET utf8 COLLATE utf8_vietnamese_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_vietnamese_ci;
+
+--
+-- Dumping data for table `category`
+--
+
+INSERT INTO `category` (`id`, `name`) VALUES
+(1, 'hihi'),
+(2, 'Chinh tri'),
+(3, 'Phap luat'),
+(4, 'Giai tri'),
+(5, 'Truyen thong');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
 --
 
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE IF NOT EXISTS `user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `fullname` varchar(255) COLLATE utf8_vietnamese_ci NOT NULL,
-  `username` varchar(30) COLLATE utf8_vietnamese_ci NOT NULL,
+  `fullname` varchar(255) CHARACTER SET utf8 COLLATE utf8_vietnamese_ci NOT NULL,
+  `username` varchar(30) CHARACTER SET utf8 COLLATE utf8_vietnamese_ci NOT NULL,
   `password` varchar(30) CHARACTER SET utf8 COLLATE utf8_vietnamese_ci NOT NULL,
-  `email` varchar(30) COLLATE utf8_vietnamese_ci NOT NULL,
-  `phone` varchar(11) COLLATE utf8_vietnamese_ci NOT NULL,
-  `role` varchar(20) COLLATE utf8_vietnamese_ci NOT NULL,
+  `email` varchar(30) CHARACTER SET utf8 COLLATE utf8_vietnamese_ci NOT NULL,
+  `phone` varchar(11) CHARACTER SET utf8 COLLATE utf8_vietnamese_ci NOT NULL,
+  `role` varchar(20) CHARACTER SET utf8 COLLATE utf8_vietnamese_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_vietnamese_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`id`, `fullname`, `username`, `password`, `email`, `phone`, `role`) VALUES
